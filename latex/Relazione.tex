@@ -1,0 +1,50 @@
+\documentclass[12pt, letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{csvsimple}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+
+\title{
+    \leavevmode{\includegraphics[width=0.8\textwidth]{resources/Universita-degli-studi-di-torino-logo.png}\newline\newline}\\
+    Progetto di Piattaforma di Home Booking \\
+    \large Laboratorio Basi di Dati 2021/2022
+}
+\author{Eduard Antonovic Occhipinti, Iman Solaih, Marco Molica}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Progettazione Concettuale}
+\section{Requisiti Iniziali}
+
+\newpage
+\section{Glossario dei Termini}
+\csvreader[
+    tabular = |l|p{4cm}|p{2cm}|p{4cm}|,
+    table head = \hline\bfseries Termine & \bfseries Descrizione & \bfseries Sinonimi & \bfseries Collegamenti\\\hline,
+    late after line = \\\hline
+]{../glossario.csv}{}{
+    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
+}
+
+\section{Requisiti rivisti e strtturati in gruppi di frasi omogenee}
+\section{Schema E-R + Business Rules}
+
+\chapter{Progettazione Logica}
+\section{Tavola dei Volumi}
+\section{Tavola delle Operazioni}
+\section{Ristrutturazione dello schema E-R}
+\subsection{Analisi delle Ridondanze}
+\subsection{Eliminazione delle Generalizzazioni}
+\subsection{Partizionamento/Accorpamento di entità e associazioni}
+\subsection{Eeventuale scelta degli identificatori principali}
+\section{Schema E-R ristrutturato + Business Rules}
+\section{Schema Relazionale}
+
+\chapter{Implementazione}
+\section{DDL di Creazione dei Database}
+\section{DML di Popolamento di Tutte le Tabelle del Database}
+\section{Qualche Operazione di cancellazione e modifica}
+
+\end{document}

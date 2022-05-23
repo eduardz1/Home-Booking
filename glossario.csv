@@ -1,0 +1,15 @@
+Termine,Descrizione,Sinonimi,Collegamenti
+utente,Individuo registrato al servizio,,{profilo verificato, host, ospite, recensione, liste, commento}
+profilo verificato,Utente che ha caricato la carta di identità,,Utente
+Host,Utente che offre un servizio ovvero può ospitare altri utenti,,{Utente, superhost, alloggio, prenotazione}
+Ospite,Utente che riceve il servizio. Può essere ospitato dagli host,,{Utente, prenotazione, soggiorno}
+Superhost,Host che soddisfa determinati requisiti,,host
+Soggiorno,{Utilizzo del servizio da parte di uno o più utenti, con durata variabile},,{prenotazione, alloggio}
+Prenotazione,Richiesta di soggiorno,,{alloggio, host, ospite}
+Alloggio,Proprietà posseduta da un utente. Può essere di diversi tipi,{Casa, struttura},{prenotazione, liste, recensione}
+Recensione,Feedback lasciate tra gli utenti verso altri utenti o proprietà,Review,{Valutazione, utente, commento}
+Liste,Insiemi di alloggi preferiti da un utente,,{alloggi, utente}
+Dimensione,Caratteristica a cui viene data una valutazione,,valutazione
+Valutazione,Punteggio in range 1-5 su una dimensione,,{dimensione, recensione}
+Commento,Descrizione testuale appartenente a una recenzione,,{recensione, thread, utente}
+Thread,Insieme di commenti,,{Commento, recensione}
