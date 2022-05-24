@@ -81,6 +81,7 @@ ospite e come host. La base di dati deve supportare le seguenti operazioni:
 ]{../glossario.csv}{}{
     \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
 }
+\newpage
 
 \section{Requisiti rivisti e strutturati in gruppi di frasi omogenee}
 \subsection{Requisiti rivisti}
@@ -143,95 +144,99 @@ Il sistema deve supportare le seguenti operazioni:
 \end{itemize}
 
 \subsection{Requisiti strutturati in gruppi di frasi omogenee}
-Requisiti strutturati in gruppi di frasi omogenee
-
-\begin{itemize} Frasi relative a utenti
-\item Ogni utente può essere sia ospite di altri utenti che host.
-\item Gli utenti sono rappresentati da un nome, cognome, email, password e uno o più numeri di telefono
-\item Gli utenti possono memorizzare la foto della carta di identità,necessaria per essere considerati utenti verificati
-\item Gli utenti possono memorizzare zero o più metodi di pagamento. Per poter effettuare delle prenotazioni è necessario avere almeno un metodo di pagamento
-\item Gli utenti possono scrivere recensioni con valutazioni verso gli host e gli alloggi
-\item Gli utenti possono ricevere recensioni dagli host dopo un soggiorno
-\item Ogni utente può creare delle liste, in cui aggiungere gli alloggi preferiti
-\item Ogni utente può effettuare una o più prenotazioni, purchè abbia un metodo di pagamento. Può confermare o cancellare le proprie prenotazioni
-\item Ogni utente che ha effettuato una prenotazione, può aggiungere altri utenti ad essa, se registrati al servizio
-\item Ogni utente può scrivere commenti nei thread delle recensioni in cui è incluso
-
-\end{itemize}
-
-\begin{itemize} Frasi relative a host
-\item Un host è una specializzazione di utente, che può ospitare altri utenti.
-\item Un host può registrare uno o più alloggi
-\item Un host può scrivere recensioni testuali verso gli utenti che hanno effettuato un soggiorno presso i propri alloggi
-\item Un host può diventare un superhost se soddisfa determinati requisiti:
+\textbf{Frasi relative a utenti}:
 \begin{itemize}
- \item Ha completato almeno 10 soggiorni, per un totale di almeno 100 notti
- \item Ha conservato un tasso di cancellazione dell'1%
- \item Ha mantenuto una valutazione complessiva di 4.8 tra tutti i soggiorni di tutti i suoi alloggi
- \end{itemize}
-\item Un host può cancellare o confermare una prenotazione ricevuta
+    \item Ogni utente può essere sia ospite di altri utenti che host.
+    \item Gli utenti sono rappresentati da un nome, cognome, email, password e uno o più numeri di telefono
+    \item Gli utenti possono memorizzare la foto della carta di identità,necessaria per essere considerati utenti verificati
+    \item Gli utenti possono memorizzare zero o più metodi di pagamento. Per poter effettuare delle prenotazioni è necessario avere almeno un metodo di pagamento
+    \item Gli utenti possono scrivere recensioni con valutazioni verso gli host e gli alloggi
+    \item Gli utenti possono ricevere recensioni dagli host dopo un soggiorno
+    \item Ogni utente può creare delle liste, in cui aggiungere gli alloggi preferiti
+    \item Ogni utente può effettuare una o più prenotazioni, purchè abbia un metodo di pagamento. Può confermare o cancellare le proprie prenotazioni
+    \item Ogni utente che ha effettuato una prenotazione, può aggiungere altri utenti ad essa, se registrati al servizio
+    \item Ogni utente può scrivere commenti nei thread delle recensioni in cui è incluso \\
 \end{itemize}
-
-\begin{itemize} Frasi relative a soggiorno
-\item Ogni soggiorno viene effettuato al seguito di una prenotazione confermata.
-\item Ogni soggiorno è caratterizzato da una data inizio e una data fine
-\item Ogni soggiorno viene effettuato in un alloggio, da uno o più utenti
-\item Per ogni soggiorno è richiesta una prenotazione
-\item Ogni soggiorno può ricevere una recensione, con valutazione
-\item La valutazione complessiva di un soggiorno è la media delle sue valutazioni
-
+\bigskip
+\textbf{Frasi relative a host}:
+\begin{itemize}
+    \item Un host è una specializzazione di utente, che può ospitare altri utenti.
+    \item Un host può registrare uno o più alloggi
+    \item Un host può scrivere recensioni testuali verso gli utenti che hanno effettuato un soggiorno presso i propri alloggi
+    \item Un host può diventare un superhost se soddisfa determinati requisiti:
+    \begin{itemize}
+        \item Ha completato almeno 10 soggiorni, per un totale di almeno 100 notti
+        \item Ha conservato un tasso di cancellazione dell'1%
+        \item Ha mantenuto una valutazione complessiva di 4.8 tra tutti i soggiorni di tutti i suoi alloggi
+    \end{itemize}
+    \item Un host può cancellare o confermare una prenotazione ricevuta
 \end{itemize}
-
-\begin{itemize} Frasi relative a prenotazione
-\item Ogni prenotazione è associata ad un alloggio
-\item Ogni prenotazione è caratterizzata da un costo totale, una data di prenotazione, una data di inizio, una data di fine
-\item Ogni prenotazione deve essere confermata o rifiutata dagli host
-\item Può essere cancellata dagli utenti o dagli host
-\item Non è possibile effettuare una prenotazione se l'utente non ha caricato un metodo di pagamento
-\item Quando confermata viene eseguito il pagamento
-\item Ogni prenotazione confermata è associata ad un soggiorno
-
+\bigskip
+\textbf{Frasi relative a soggiorno}:
+\begin{itemize}
+    \item Ogni soggiorno viene effettuato al seguito di una prenotazione confermata.
+    \item Ogni soggiorno è caratterizzato da una data inizio e una data fine
+    \item Ogni soggiorno viene effettuato in un alloggio, da uno o più utenti
+    \item Per ogni soggiorno è richiesta una prenotazione
+    \item Ogni soggiorno può ricevere una recensione, con valutazione
+    \item La valutazione complessiva di un soggiorno è la media delle sue valutazioni
 \end{itemize}
-\begin{itemize} Frasi relative a Alloggio
-\item Ogni alloggio è caratterizzato da un nome, un comune, un indirizzo, un costo per notte per persona, un costo pulizia, un numero di letti, orario del check\itemin, orario del check\itemout
-\item Ogni alloggio può avere 0 o più recensioni
-\item Ogni alloggio deve appartenere ad un host
-\item Più alloggi possono appartenere allo stesso host
-\item Un alloggio può essere di diversi tipo: intero appartamento, stanze private o stanze condivise
-\item Un alloggio di tipo stanze condivise può ricevere prenotazioni per la stessa data fino al raggiungimento del numero di letti
-\item Un alloggio di tipo stanze private può ricevere prenotazioni per la stessa data fino al raggiungimento del numero di stanze
-\item Un alloggio di tipo appartamento non può ricevere più prenotazioni per la stessa data
-\item Un alloggio può avere una o più foto
-\item Un alloggio può riceve delle recensioni
-\item La valutazione complessiva di un alloggio è la media delle valutazioni ricevute
-\item Un alloggio può essere aggiunto tra i preferiti di zero o più utenti
-\item Un alloggio può offire zero o più servizi
+\bigskip
+\textbf{Frasi relative a prenotazione}:
+\begin{itemize}
+    \item Ogni prenotazione è associata ad un alloggio
+    \item Ogni prenotazione è caratterizzata da un costo totale, una data di prenotazione, una data di inizio, una data di fine
+    \item Ogni prenotazione deve essere confermata o rifiutata dagli host
+    \item Può essere cancellata dagli utenti o dagli host
+    \item Non è possibile effettuare una prenotazione se l'utente non ha caricato un metodo di pagamento
+    \item Quando confermata viene eseguito il pagamento
+    \item Ogni prenotazione confermata è associata ad un soggiorno \\
 \end{itemize}
-
-\begin{itemize} Frasi relative a Recensione
-\item Ogni recensione è caratterizzata da un corpo, una data e delle valutazioni
-\item Ogni recensione è associata ad un soggiorno
-\item Le recensioni sono di 3 tipi: fatte ad host, fatte ad utenti e fatte ad alloggio
-\item Una recensione su alloggio può contenere una valutazione della pulizia, una valutazione della posizione e una valutazione sul rapporto qualità\itemprezzo
-\item Una recensione su host può contenere una valutazione sulla comunicazione
-\item Una recensione su utenti non contiene valutazioni
-\item Ad ogni recensione può essere associato un thread di commenti
-\item Una recensione può essere lasciata da un host o da un utente
-\item Una recensione può essere visibile o non visibile
-\item Una recensione diventa visibile se sia l'autore che il recensito hanno pubblicato una recensione
-\item Una recensione diventa automaticamente visibile dopo 7 giorni dalla fine del soggiorno a cui è associata
+\bigskip
+\textbf{Frasi relative a Alloggio}:
+\begin{itemize}
+    \item Ogni alloggio è caratterizzato da un nome, un comune, un indirizzo, un costo per notte per persona, un costo pulizia, un numero di letti, orario del check-in, orario del check-out
+    \item Ogni alloggio può avere 0 o più recensioni
+    \item Ogni alloggio deve appartenere ad un host
+    \item Più alloggi possono appartenere allo stesso host
+    \item Un alloggio può essere di diversi tipo: intero appartamento, stanze private o stanze condivise
+    \item Un alloggio di tipo stanze condivise può ricevere prenotazioni per la stessa data fino al raggiungimento del numero di letti
+    \item Un alloggio di tipo stanze private può ricevere prenotazioni per la stessa data fino al raggiungimento del numero di stanze
+    \item Un alloggio di tipo appartamento non può ricevere più prenotazioni per la stessa data
+    \item Un alloggio può avere una o più foto
+    \item Un alloggio può riceve delle recensioni
+    \item La valutazione complessiva di un alloggio è la media delle valutazioni ricevute
+    \item Un alloggio può essere aggiunto tra i preferiti di zero o più utenti
+    \item Un alloggio può offire zero o più servizi
 \end{itemize}
-
-\begin{itemize} Frasi relative a Liste
-\item Ogni lista è caratterizzata da un nome e una descrizione
-\item Una lista può contenere zero o più alloggi preferiti di un utente
-\item Ogni lista appartiene ad un solo utente
+\bigskip
+\textbf{Frasi relative a Recensione}:
+\begin{itemize}
+    \item Ogni recensione è caratterizzata da un corpo, una data e delle valutazioni
+    \item Ogni recensione è associata ad un soggiorno
+    \item Le recensioni sono di 3 tipi: fatte ad host, fatte ad utenti e fatte ad alloggio
+    \item Una recensione su alloggio può contenere una valutazione della pulizia, una valutazione della posizione e una valutazione sul rapporto qualità-prezzo
+    \item Una recensione su host può contenere una valutazione sulla comunicazione
+    \item Una recensione su utenti non contiene valutazioni
+    \item Ad ogni recensione può essere associato un thread di commenti
+    \item Una recensione può essere lasciata da un host o da un utente
+    \item Una recensione può essere visibile o non visibile
+    \item Una recensione diventa visibile se sia l'autore che il recensito hanno pubblicato una recensione
+    \item Una recensione diventa automaticamente visibile dopo 7 giorni dalla fine del soggiorno a cui è associata
 \end{itemize}
-
-\begin{itemize} Frasi relative a Commento
-\item Ogni commento è caratterizzato da un testo
-\item Ogni commento può essere scritto nel thread di una recensione
-\item Ogni commento può essere scritto solo dall'utente o dall'host coinvolti nella recensione
+\bigskip
+\textbf{Frasi relative a Liste}:
+\begin{itemize}
+    \item Ogni lista è caratterizzata da un nome e una descrizione
+    \item Una lista può contenere zero o più alloggi preferiti di un utente
+    \item Ogni lista appartiene ad un solo utente
+\end{itemize}
+\bigskip
+\textbf{Frasi relative a Commento}:
+\begin{itemize}
+    \item Ogni commento è caratterizzato da un testo
+    \item Ogni commento può essere scritto nel thread di una recensione
+    \item Ogni commento può essere scritto solo dall'utente o dall'host coinvolti nella recensione
 \end{itemize}
 
 
