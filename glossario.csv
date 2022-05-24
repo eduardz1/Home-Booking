@@ -1,8 +1,8 @@
 Termine,Descrizione,Sinonimi,Collegamenti
-profilo verificato,Utente che ha caricato la carta di identità,,Utente
-Host,Utente che offre un servizio ovvero può ospitare altri utenti,Utente,{Utente, superhost, alloggio, prenotazione, profilo verificato, host, recensione, liste, commento}
-Ospite,Utente che riceve il servizio. Può essere ospitato dagli host,,{Utente, prenotazione, soggiorno}
-Superhost,Host che soddisfa determinati requisiti,,host
+Utente,Individuo che usufruisce del servizio. Può essere ospitato da altri utenti,{Ospite},{Host,prenotazione,Profilo verificato, recensione, liste, commento}
+Profilo verificato,Utente che ha caricato la carta di identità,,{Utente}
+Host,Utente che offre un servizio ovvero può ospitare altri utenti,,{Utente, superhost, alloggio, prenotazione, recensione, commento}
+Superhost,Host che soddisfa determinati requisiti,,{host}
 Soggiorno,{Utilizzo del servizio da parte di uno o più utenti, con durata variabile},,{prenotazione, alloggio}
 Prenotazione,Richiesta di soggiorno,,{alloggio, host, ospite}
 Alloggio,Proprietà posseduta da un utente. Può essere di diversi tipi,{Casa, struttura},{prenotazione, liste, recensione}
