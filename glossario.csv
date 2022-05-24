@@ -1,5 +1,5 @@
 Termine,Descrizione,Sinonimi,Collegamenti
-Utente,Individuo che usufruisce del servizio. Può essere ospitato da altri utenti,{Ospite},{Host,prenotazione,Profilo verificato, recensione, liste, commento}
+Utente,Individuo che usufruisce del servizio. Può essere ospitato da altri utenti,{Ospite},{Host, prenotazione, Profilo verificato, recensione, liste, commento}
 Profilo verificato,Utente che ha caricato la carta di identità,,{Utente}
 Host,Utente che offre un servizio ovvero può ospitare altri utenti,,{Utente, superhost, alloggio, prenotazione, recensione, commento}
 Superhost,Host che soddisfa determinati requisiti,,{host}
