@@ -1,19 +1,34 @@
 \section{Business Rules}
 \subsection{Derivate dal testo}
+\begin{itemize}
+  \item Un utente può essere riconosciuto come verificato solamente se carica una carta di identità valida
+  \item Un utente non può prenotare se non ha inserito un metodo di pagamento valido
+  \item Un host per diventare superhost deve aver completato almeno 10 soggiorni per un totale di almeno 100 notti, aver conservato un tasso di cancellazione dell'1\% e avere una valutazione complessiva di 4.8 
+  \item Un utente può visualizzare l'indirizzo di un alloggio solamente dopo aver effettuato una prenotazione con avvenuta conferma da parte dell'host
+  \item Un utente non può indicare in una prenotazione nomi di altri ospiti, se questi non sono iscritti alla piattaforma 
+  \item Un utente può valutare un host, e viceversa, solamente al termine del soggiorno soggetto alla valutazione
+  \item Una valutazione può avere un punteggio compreso tra 1 e 5
+  \item Una recensione da parte di un host verso un utente comprende solo un commento testuale
+  \item Una recensione da parte di un utente verso un host può contenere sia un commento testuale che una valutazione
+  \item Una recensione da parte di un host risulta visibile solamente quando il soggiorno a cui fa riferimento riceve la recensione da parte dell'utente, e viceversa
+  \item Una recensione risulta visibile trascorsi 7 giorni dal termine del soggiorno a cui fa riferimento
+  \item Le recensioni sono visibili sui profili degli utenti suddivise in base a quelle ricevute come ospite e come host
+\end{itemize}
 
 \subsection{Introdotte}
 \begin{itemize}
-    \item bisnis
-    \item rule
-    \item rule
-    \item rule
-    \item bisnis
-    \item   rule
-    \item   rule
-    \item   rule
-    \item   rule
-    \item       rule
-    \item    rule
-    \item   rule
-    \item   rule
+  \item Un utente non può registrarsi utilizzando una mail già utilizzata per la registrazione di un altro utente
+  \item Un utente viene ritenuto host se possiede almeno un alloggio
+  \item Un utente può cancellare solamente le proprie prenotazioni effettuate
+  \item Un host può confermare o rifiutare solamente le prenotazioni effettuate ai propri alloggi
+  \item Un utente non può indicare, in una prenotazione, un numero di ospiti maggiore dei posti disponibili nell'alloggio prenotato
+  \item Un utente non può valutare soggiorni non prenotati da lui
+  \item Un host non può valutare ospiti che non hanno effettuato soggiorni presso i proprio alloggi
+  \item Un utente non può scrivere commenti sotto recensioni altrui
+  \item Un host non può scrivere commenti sotto recensioni altrui
+  \item Un utente non può effettuare due recensioni per lo stesso soggiorno
+  \item Una prenotazione non può avere una data di fine antecedente o uguale alla data di inizio
+  \item Una prenotazione non può avere una data di inizio antecedente al momento in cui viene effettuata
+  \item Una prenotazione non può essere effettuata presso un alloggio se la data di inizio o di fine intercorre tra la data di inizio e di fine di un'altra prenotazione presso lo stesso alloggio
+  \item Non può essere effettuata una prenotazione, presso un alloggio, con un numero di ospiti maggiore rispetto ai posti disponibili
 \end{itemize}
