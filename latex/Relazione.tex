@@ -4,8 +4,10 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{longtable, tabu}
 \usepackage{array}
+\usepackage{longtable}
+% \usepackage{multirow}
+% \usepackage{array, makecell}
 \usepackage{adjustbox}
 % \usepackage{showframe}
 
@@ -32,11 +34,11 @@
 \section{Glossario dei Termini}
 \small
 \csvreader[
-    tabular = |l|p{4cm}|l|p{2.38cm}|,
-    table head = \hline\bfseries Termine & \bfseries Descrizione & \bfseries Sinonimi & \bfseries Collegamenti\\\hline,
-    late after line = \\\hline
+tabular = |l|p{4cm}|l|p{2.38cm}|,
+table head = \hline\bfseries Termine & \bfseries Descrizione & \bfseries Sinonimi & \bfseries Collegamenti\\\hline,
+late after line = \\\hline
 ]{resources/glossario.csv}{}{
-    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
+\csvcoli & \csvcolii & \csvcoliii & \csvcoliv
 }
 \normalsize
 \newpage
@@ -50,28 +52,11 @@
 
 \chapter{Progettazione Logica}
 \section{Tavola dei Volumi}
-\small
-\csvreader[
-    longtable = |l|c|c|p{6.2cm}|,
-    table head = \hline\bfseries Concetto & \bfseries Tipo & \bfseries Volume & \bfseries Motivazione\\\hline,
-    late after line = \\\hline,
-]{resources/tavola_dei_volumi.csv}{}{
-    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
-}
-\normalsize
+\input{Tavola_volumi.tex}
 
 
 \section{Tavola delle Operazioni}
-\small
-\csvreader[
-    longtable = |c|p{3cm}|c|c|p{4.18cm}|,
-    respect sharp,
-    table head = \hline\bfseries \# & Operazione & \bfseries Tipo & \bfseries Frequenza & \bfseries Motivazione\\\hline,
-    late after line = \\\hline
-]{resources/tavola_delle_operazioni.csv}{}{
-    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv
-}
-\normalsize
+\input{Tavola_operazioni.tex}
 
 
 \section{Ristrutturazione dello schema E-R}
