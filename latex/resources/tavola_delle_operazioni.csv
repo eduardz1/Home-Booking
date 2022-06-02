@@ -1,5 +1,15 @@
 Operazione,Descrizione,Tipo,Frequenza
-1,Registrazione al servizio,I,100.000/day 
-2,
-3,
-4,
+1,Registrazione al servizio,I,50.000/day 
+2,Prenotazione di un alloggio,I,25.000/day
+2,Conferma di una prenotazione,I,24.500/day
+3,Declino di una prenotazione,I,500/day
+4,Scrittura di una recensione,I,8000/day
+5,Scrittura di un commento,I,13000/day
+6,Creazione di una lista di alloggi preferiti,I,7000/day
+7,Registrazione di un nuovo alloggio,I,300/day
+8,Aggiornamento del tasso di cancellazione di ciascun host,B,1/week
+9,Calcolo del numero di soggiorni e tempo di soggiorno complessivo per ciascun host,B,1/day
+10,Calcolo della valutazione complessiva di ogni host per i soggiorni totali ai propri alloggi,B,1/day
+11,Aggiornamento dello status di ciascun host,B,1/day
+12,Aggiornamento della classifica degli alloggi più graditi,B,1/month
+13,Aggiornamento della visibilità delle recensioni,B,1/day
