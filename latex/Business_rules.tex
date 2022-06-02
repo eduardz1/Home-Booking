@@ -7,6 +7,8 @@
   \item Un utente può visualizzare l'indirizzo di un alloggio solamente dopo aver effettuato una prenotazione con avvenuta conferma da parte dell'host
   \item Un utente non può indicare in una prenotazione nomi di altri ospiti, se questi non sono iscritti alla piattaforma 
   \item Un utente può valutare un host, e viceversa, solamente al termine del soggiorno soggetto alla valutazione
+  \item Un utente non può cancellare una prenotazione dopo l'inizio di un soggiorno
+  \item Un host non può cancellare una prenotazione dopo l'inizio di un soggiorno
   \item Una valutazione può avere un punteggio compreso tra 1 e 5
   \item Una recensione da parte di un host verso un utente comprende solo un commento testuale
   \item Una recensione da parte di un utente verso un host può contenere sia un commento testuale che una valutazione
@@ -18,10 +20,12 @@
 \subsection{Introdotte}
 \begin{itemize}
   \item Un utente non può registrarsi utilizzando una mail già utilizzata per la registrazione di un altro utente
+  \item L'indirizzo e-mail di un utente che effettua la registrazione deve corrispondere al formato e-mail (nomemail@dominio.TLD)
   \item Un utente viene ritenuto host se possiede almeno un alloggio
   \item Un utente può cancellare solamente le proprie prenotazioni effettuate
   \item Un host può confermare o rifiutare solamente le prenotazioni effettuate ai propri alloggi
   \item Un utente non può indicare, in una prenotazione, un numero di ospiti maggiore dei posti disponibili nell'alloggio prenotato
+  \item Un utente non può effettuare una prenotazione presso un alloggio di tipo stanza condivisa se il numero di posti letto ancora disponibili non è sufficiente
   \item Un utente non può valutare soggiorni non prenotati da lui
   \item Un host non può valutare ospiti che non hanno effettuato soggiorni presso i proprio alloggi
   \item Un utente non può scrivere commenti sotto recensioni altrui
@@ -29,6 +33,6 @@
   \item Un utente non può effettuare due recensioni per lo stesso soggiorno
   \item Una prenotazione non può avere una data di fine antecedente o uguale alla data di inizio
   \item Una prenotazione non può avere una data di inizio antecedente al momento in cui viene effettuata
-  \item Una prenotazione non può essere effettuata presso un alloggio se la data di inizio o di fine intercorre tra la data di inizio e di fine di un'altra prenotazione presso lo stesso alloggio
+  \item Una prenotazione non può essere effettuata presso un alloggio di tipo stanza singola o appartamento se la data di inizio o di fine intercorre tra la data di inizio e di fine di un'altra prenotazione presso lo stesso alloggio
   \item Non può essere effettuata una prenotazione, presso un alloggio, con un numero di ospiti maggiore rispetto ai posti disponibili
 \end{itemize}
