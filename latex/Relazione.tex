@@ -4,6 +4,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{longtable}
 
 % \usepackage{pstricks}
 % \usepackage{auto-pst-pdf}
@@ -44,27 +45,23 @@
 
 \chapter{Progettazione Logica}
 \section{Tavola dei Volumi}
-
-\begin{table}[H]
-    \csvreader[
-        tabular = |l|c|c|p{4cm}|,
-        table head = \hline\bfseries Concetto & \bfseries Tipo & \bfseries Volume & \bfseries Motivazione\\\hline,
-        late after line = \\\hline
-    ]{resources/tavola_dei_volumi.csv}{}{
-        \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
-    }
-\end{table}
+\csvreader[
+    longtable = |l|c|c|p{6.9cm}|,
+    table head = \hline\bfseries Concetto & \bfseries Tipo & \bfseries Volume & \bfseries Motivazione\\\hline,
+    late after line = \\\hline,
+]{resources/tavola_dei_volumi.csv}{}{
+    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
+}
 
 \section{Tavola delle Operazioni}
-\begin{table}[H]
-    \csvreader[
-        tabular = |l|c|c|p{4cm}|,
-        table head = \hline\bfseries Operazione & \bfseries Tipo & \bfseries Frequenza & \bfseries Motivazione\\\hline,
-        late after line = \\\hline
-    ]{resources/tavola_delle_operazioni.csv}{}{
-        \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
-    }
-\end{table}
+\csvreader[
+    longtable = |l|c|c|p{6cm}|,
+    table head = \hline\bfseries Operazione & \bfseries Tipo & \bfseries Frequenza & \bfseries Motivazione\\\hline,
+    late after line = \\\hline
+]{resources/tavola_delle_operazioni.csv}{}{
+    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
+}
+
 
 \section{Ristrutturazione dello schema E-R}
 \subsection{Analisi delle Ridondanze}
@@ -72,6 +69,8 @@
 \subsection{Partizionamento/Accorpamento di entità e associazioni}
 \subsection{Eeventuale scelta degli identificatori principali}
 \section{Schema E-R ristrutturato + Business Rules}
+\input{Business_rules.tex}
+
 \section{Schema Relazionale}
 
 \chapter{Implementazione}
