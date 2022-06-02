@@ -4,7 +4,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{longtable}
+\usepackage{longtable, tabu}
+\usepackage{array}
+\usepackage{adjustbox}
 % \usepackage{showframe}
 
 % \usepackage{pstricks}
@@ -28,13 +30,15 @@
 \input{Requisiti_iniziali.tex}
 
 \section{Glossario dei Termini}
+\small
 \csvreader[
-    tabular = |l|p{4cm}|p{2cm}|p{4cm}|,
+    tabular = |l|p{4cm}|l|p{2.38cm}|,
     table head = \hline\bfseries Termine & \bfseries Descrizione & \bfseries Sinonimi & \bfseries Collegamenti\\\hline,
     late after line = \\\hline
 ]{resources/glossario.csv}{}{
     \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
 }
+\normalsize
 \newpage
 
 \section{Requisiti rivisti e strutturati in gruppi di frasi omogenee}
@@ -46,22 +50,28 @@
 
 \chapter{Progettazione Logica}
 \section{Tavola dei Volumi}
+\small
 \csvreader[
-    longtable = |l|c|c|p{5.9cm}|,
+    longtable = |l|c|c|p{6.2cm}|,
     table head = \hline\bfseries Concetto & \bfseries Tipo & \bfseries Volume & \bfseries Motivazione\\\hline,
     late after line = \\\hline,
 ]{resources/tavola_dei_volumi.csv}{}{
     \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
 }
+\normalsize
+
 
 \section{Tavola delle Operazioni}
+\small
 \csvreader[
-    longtable = |p{3.8cm}|c|c|p{4cm}|,
-    table head = \hline\bfseries Operazione & \bfseries Tipo & \bfseries Frequenza & \bfseries Motivazione\\\hline,
+    longtable = |c|p{3cm}|c|c|p{4.18cm}|,
+    respect sharp,
+    table head = \hline\bfseries \# & Operazione & \bfseries Tipo & \bfseries Frequenza & \bfseries Motivazione\\\hline,
     late after line = \\\hline
 ]{resources/tavola_delle_operazioni.csv}{}{
-    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv
+    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv
 }
+\normalsize
 
 
 \section{Ristrutturazione dello schema E-R}
