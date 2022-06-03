@@ -1,7 +1,102 @@
 \subsection{Analisi delle ridondanze}
 {todo:titoletto}ridondanza 1
-All'interno dello schema ER è stata identificata 1 ridondanza: la relazione valutazione tra le entità alloggio e recensione. Questa ridondanza ci permette di ottenere le recensioni effettuate su un alloggio utilizzando solamente le entità alloggio e recensione. Analizziamo la ricerca \bf"Ottenere tutte le recensioni di un alloggio" 
+All'interno dello schema ER è stata identificata 1 ridondanza: la relazione valutazione tra le entità alloggio e recensione. Questa ridondanza ci permette di ottenere le recensioni effettuate su un alloggio utilizzando solamente le entità alloggio e recensione.
+La sezione della tavola dei volumi di interesse è:
+
+\small
+\setlength\extrarowheight{2pt}
+\begin{longtable}{|l|c|c|p{6.2cm}|}
+    \hline \textbf{Concetto} & \textbf{Tipo} & \textbf{Volume} & \textbf{Motivazione}                                                                                                                         \\\hline
+    \endfirsthead
+
+    \hline \textbf{Concetto} & \textbf{Tipo} & \textbf{Volume} & \textbf{Motivazione}                                                                                                                         \\\hline
+    \endhead
+
+    \hline \multicolumn{4}{|r|}{{Continua all pagina successiva}}                                                                                                                                             \\\hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+    Alloggio                 & E             & 169.000         & {Ipotizziamo che nella piattaforma verranno registrati circa 169 mila alloggi}                                                               \\\hline
+    Prenotazione             & E             & 36.000.000      & {Ipotizziamo che sulla piattaforma siano state effettuate circa 36 milioni di prenotazioni}                                                  \\\hline
+    Soggiorno                & E             & 34.920.000      & {Ipotizziamo che sulla piattaforma ci siano stati circa 35 milioni di soggiorni}                                                             \\\hline
+    Recensione               & E             & 12.000.000      & {Ipotizziamo che sulla piattaforma vengano scritte circa 12 milioni di recensioni}                                                           \\\hline
+    Generazione              & R             & 34.920.000      & {Ipotizziamo che sul totale delle prenotazioni, circa il 2\% vengano cancellate. Tutte le altre diventano soggiorni effettivi}               \\\hline
+    Correlazione             & R             & 12.000.000      & {Ipotizziamo che circa 1 soggiorno su 6 riceva una recensione da parte dell'utente o dell'host, e che 1 su 6 la riceva da parte di entrambi} \\\hline
+    Riserva                  & R             & 36.000.000      & {Ipotizziamo che tutti gli alloggi vengano riservati circa 36 milioni di volte, una volta per ogni prenotazione}                             \\\hline
+    Valutazione              & R             & 2.000.000       & {Ipotizziamo che circa 1 recensione su 3 viene scritta verso un alloggio}                                                                    \\\hline
+\end{longtable}
+\normalsize 
+
 {todo:titoletto}schema con ridondanza
 {todo:image_page_5}
 {todo:titoletto}schema senza ridondanza
 {todo:image_page_6}
+
+{todo:titoletto}Tavola degli accessi
+Analizziamo l'operazione \bf"Scrittura di una recensione su un alloggio (3000 volte al giorno)" 
+
+\bf In presenza di ridondanza
+\small
+\setlength\extrarowheight{2pt}
+\begin{longtable}{|l|c|c|p{6.2cm}|}
+    \hline \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo}                                                                                                                         \\\hline
+    \endfirsthead
+
+    \hline \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo}                                                                                                                         \\\hline
+    \endhead
+
+    \hline \multicolumn{4}{|r|}{{Continua all pagina successiva}}                                                                                                                                             \\\hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+    Alloggio                 & E             & 1        & S     \\\hline
+    Alloggio                 & E             & 1        & L     \\\hline
+    Recensione               & E             & 1        & S     \\\hline
+    Valutazione              & R             & 1        & S     \\\hline
+\end{longtable}
+\normalsize
+
+\bf In presenza di ridondanza
+\small
+\setlength\extrarowheight{2pt}
+\begin{longtable}{|l|c|c|p{6.2cm}|}
+    \hline \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo}                                                                                                                         \\\hline
+    \endfirsthead
+
+    \hline \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo}                                                                                                                         \\\hline
+    \endhead
+
+    \hline \multicolumn{4}{|r|}{{Continua all pagina successiva}}                                                                                                                                             \\\hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+    Alloggio                    & E             & 1        & L     \\\hline
+    Riserva                     & R             & 1        & L     \\\hline
+    Prenotazione                & E             & 1        & L     \\\hline
+    Generazione                 & R             & 1        & L     \\\hline
+    Soggiorno                   & E             & 1        & S     \\\hline
+    Soggiorno                   & E             & 1        & L     \\\hline
+    Correlazione                & R             & 1        & S     \\\hline
+    Recensione                  & E             & 1        & S     \\\hline
+\end{longtable}
+\normalsize
+
+Analisi di complessità in presenza di ridondanza:
+{todo:sottopunto} In termini di tempo, vegnono effettuati un accesso in lettura e tre accessi in scrittura, quindi 3000 + 3000 * 3 * 2 (contiamo doppi gli accessi in scrittura), per un totale di 21 mila accessi.
+{todo:sottopunto} In termini di spazio, viene aggiunta una relazione in cui si memorizzano i dati chiave dell'alloggio all'interno dell'entità recensione: ipotizziamo quindi 200 byte per ogni recensione scritta.
+Considerando 200 byte per 2.000.000 di recensioni totali, il costo totale in termini di spazio risulta essere 200 * 2.000.000 (~381.47Mb).
+
+Analisi di complessità in assenza di ridondanza:
+{todo:sottopunto} In termini di spazio, il costo totale è 0 byte.
+{todo:sottopunto} In termini di tempo, vegnono effettuati tre accessi in scrittura e cinque accessi in lettura, quindi 3000 * 5 + 3000 * 3 * 2 (contiamo doppi gli accessi in scrittura), per un totale di 33 mila accessi.
+
+Dall'analisi effettuata, con l'assenza di ridondanza, risulta un peggioramento nei tempi di accesso (circa il 35\% di tempo in più) ma un risparmio notevole in termini di spreco di memoria: decidiamo per cui di rimuovere la ridondanza.
+/emph{mi piace succhiare i peni perche:}
+/itemize{stat}
+/item sono buoni
+/item son gustosi
+/item per superhost
+/itemize{stop}
