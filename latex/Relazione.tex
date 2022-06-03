@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{array}
 \usepackage{longtable}
+\usepackage{makecell}
 % \usepackage{multirow}
 % \usepackage{array, makecell}
 \usepackage{adjustbox}
@@ -15,6 +16,7 @@
 % \usepackage{auto-pst-pdf}
 % \usepackage{pstricks-add} 
 % \usepackage{pst-eps}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \title{
     \leavevmode{\includegraphics[width=0.8\textwidth]{resources/Universita-degli-studi-di-torino-logo.png}\newline\newline}\\
@@ -32,15 +34,7 @@
 \input{Requisiti_iniziali.tex}
 
 \section{Glossario dei Termini}
-\small
-\csvreader[
-tabular = |l|p{4cm}|l|p{2.38cm}|,
-table head = \hline\bfseries Termine & \bfseries Descrizione & \bfseries Sinonimi & \bfseries Collegamenti\\\hline,
-late after line = \\\hline
-]{resources/glossario.csv}{}{
-\csvcoli & \csvcolii & \csvcoliii & \csvcoliv
-}
-\normalsize
+\input{Glossario.tex}
 \newpage
 
 \section{Requisiti rivisti e strutturati in gruppi di frasi omogenee}
