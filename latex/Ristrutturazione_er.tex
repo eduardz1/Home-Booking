@@ -100,15 +100,6 @@ Analisi di complessità in assenza di ridondanza:
 \end{itemize}
 
 Dall'analisi effettuata, con l'assenza di ridondanza, risulta un peggioramento nei tempi di accesso (circa il 35\% di tempo in più) ma un risparmio notevole in termini di spreco di memoria: decidiamo per cui di rimuovere la ridondanza.
-    {todo:non cancellare perchè fatto da fratta}
-\textbf{mi piace succhiare i peni perche:}
-\color{red}
-\begin{itemize}
-    \item sono buoni
-    \item son gustosi
-    \item per superhost
-\end{itemize}
-\color{black}
 
 \subsection{Eliminazione delle generalizzazioni}
 \subsubsection{Entità RECENSIONE}
@@ -133,6 +124,60 @@ La generalizzazione è di tipo totale ed esclusiva. La decisione consiste nel ra
 \includegraphics[width=\textwidth]{resources/page14}
 La decisione di accorpare le entità PRENOTAZIONE e SOGGIORNO in un'unica entità con attributo soggiorno (di tipo booleano) deriva dal fatto che l'entità SOGGIORNO viene generata dalle prenotazioni con stato "confermata".
 
+{todo:immagine utente to Telefono}
+Decidiamo di partizionare l'entità UTENTE estraendo l'attributo telefono e facendolo diventare una nuova entità TELEFONO, associata a UTENTE tramite la relazione POSSEDIMENTO.
+{todo:immagine utente to Pagamento}
+Decidiamo di partizionare l'entità UTENTE estraendo l'attributo Pagamento e facendolo diventare una nuova entità METODO DI PAGAMENTO, associata a UTENTE tramite la relazione APPARTENENZA.
+
+
 \subsection{Eliminazione degli attributi composti}
 L’attributo composto “\textbf{indirizzo}” viene eliminato seguendo la soluzione seguente: eliminare l’attributo composto e considerare i suoi componenti come attributi semplici. Nel caso di indirizzo abbiamo: via, numero civico e cap e comune.
 Tale eliminazione viene effettuato nell'entità \textbf{ALLOGGIO}
+
+
+\subsection{SCHEMA RELAZIONALE}
+\begin{itemize}
+  \item Utente (\underline{Email}, Nome, Cognome, Password, Host, Superhost)
+  \item Alloggio (\underline{ID Alloggio}, Nome, Host, tipologia, Orario check-in, Orario check-out, Costo, Costo pulizia, Posti letto, CAP, Comune, Civico, Via)
+        Alloggio (Host) referenzia Utente (Email)
+  \item Prenotazione (\underline{ID Prenotazione}, Richiedente, ID Alloggio, Data inizio, Data fine, Soggiorno, Stato)
+        Prenotazione (ID Alloggio) referenzia Alloggio (ID Alloggio)
+        Prenotazione (Richiedente) referenzia Utente (Email)
+  \item Recensione (\underline{ID Recensione}, Autore, ID Prenotazione, Data, Valutazione posizione, Valutazione pulizia, Valutazione qualità-prezzo, Valutazione comunicazione, Corpo)
+        Prenotazione (Autore) referenzia Utente (Email)
+        Prenotazione (ID Prenotazione) referenzia Prenotazione (ID Prenotazione)
+  \item Commento (\underline{ ID Commento }, Data, ID Recensione, Autore, Corpo)
+        Commento (Autore) referenzia Utente (Email)
+        Commento (ID Recensione) referenzia Recensione (ID Recensione)
+  \item Lista (\underline{ ID Lista }, Nome, Descrizione, Autore)
+        Lista (Autore) referenzia Utente (Email)
+  \item Contenuto(\underline{ ID Lista }, \underline{ID Alloggio})
+        Contenuto (ID Lista) referenzia Lista (ID Lista)
+        Contenuto (ID Alloggio) referenzia Alloggio (ID Alloggio)
+\end{itemize}
+
+
+% \subsection{SCHEMA RELAZIONALE}
+% \begin{itemize}
+%   \item Utente (\underline{Email}, Nome, Cognome, Password, Host, Superhost)
+%   \item Alloggio (\underline{Nome},\underline{Host}, tipologia, Orario check-in, Orario check-out, Costo, Costo pulizia, Posti letto, CAP, Comune, Civico, Via)
+%         Alloggio (Host) referenzia Utente (Email)
+%   \item Prenotazione (\underline{Data inizio}, \underline{Data fine}, \underline{Nome alloggio}, \underline{Host alloggio}, \underline{Richiedente}, Soggiorno, Stato)
+%         Prenotazione (Richiedente) referenzia Utente (Email)
+%         Prenotazione (Nome alloggio, Host alloggio) referenzia Alloggio (Nome, Host)
+%   \item Recensione (\underline{ Data }, \underline{ Data inizio prenotazione }, \underline{ Data fine prenotazione }, \underline{ Nome alloggio }, \underline{ Host alloggio }, \underline{ Richiedente prenotazione }, \underline{ Autore }, Valutazione posizione, Valutazione pulizia, Valutazione qualità-prezzo, Valutazione comunicazione, Corpo)
+%         Recensione (Data inizio prenotazione, Data fine prenotazione, Nome alloggio, Host alloggio, Richiedente prenotazione) referenzia Prenotazione (Data inizio, Data fine, Nome alloggio, Host alloggio, Richiedente)
+%         Recensione (Autore) referenzia Utente (Email)
+%   \item Commento (\underline{ Data }, )   
+%   \item Lista  
+%   \item Servizio 
+%   \item Richiesta
+%   \item Generazione 
+%   \item Elaborazione
+%   \item Contenuto
+%   \item Creazione
+%   \item Scritto    
+%   \item Correlazione 
+%   \item Offerto     
+%   \item Valutazione
+% \end{itemize}
