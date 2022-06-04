@@ -94,9 +94,32 @@ Analisi di complessità in assenza di ridondanza:
 {todo:sottopunto} In termini di tempo, vegnono effettuati tre accessi in scrittura e cinque accessi in lettura, quindi 3000 * 5 + 3000 * 3 * 2 (contiamo doppi gli accessi in scrittura), per un totale di 33 mila accessi.
 
 Dall'analisi effettuata, con l'assenza di ridondanza, risulta un peggioramento nei tempi di accesso (circa il 35\% di tempo in più) ma un risparmio notevole in termini di spreco di memoria: decidiamo per cui di rimuovere la ridondanza.
+{todo:non cancellare perchè fatto da fratta}
 /emph{mi piace succhiare i peni perche:}
 /itemize{stat}
 /item sono buoni
 /item son gustosi
 /item per superhost
 /itemize{stop}
+
+\subsection{Eliminazione delle generalizzazioni}
+{todo:titoletto}Entità RECENSIONE.
+{todo:image_page_7}
+{todo:image_page_8}
+La generalizzazione è di tipo totale ed esclusiva. 
+La decisione consiste nel raggruppamento delle entità	figlie nell'attributo categoria. Gli attributi specifici delle entità figlie (valutazioni) vengono spostate nell'entità padre, diventando annullabili. L'attributo categoria sarà un valore not null.
+
+{todo:titoletto}Entità ALLOGGIO.
+{todo:image_page_9}
+{todo:image_page_10}
+La generalizzazione è di tipo totale ed esclusiva. La decisione consiste nel raggruppamento delle entità	figlie nell'attributo tipologia, con valore not null.
+
+{todo:titoletto}Entità UTENTE.
+{todo:image_page_11}
+{todo:image_page_12}
+La generalizzazione è di tipo totale ed esclusiva. La decisione consiste nel raggruppamento dell'entità figlia nell'attributo host, con valore not null. L'attributo superhost dell'entità figlia viene trasferito al padre.
+
+\subsection{Partizionamento/accorpamento di entità e associazioni}
+{todo:image_page_13}
+{todo:image_page_14}
+La decisione di accorpare le entità PRENOTAZIONE e SOGGIORNO in un'unica entità con attributo soggiorno (di tipo booleano) deriva dal fatto che l'entità SOGGIORNO viene generata dalle prenotazioni con stato "confermata".
