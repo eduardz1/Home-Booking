@@ -11,10 +11,12 @@
 % \usepackage{array, makecell}
 \usepackage{adjustbox}
 % \usepackage{showframe}
+\usepackage{caption}
+\usepackage{color}
 
 % \usepackage{pstricks}
 % \usepackage{auto-pst-pdf}
-% \usepackage{pstricks-add} 
+% \usepackage{pstricks-add}
 % \usepackage{pst-eps}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
@@ -54,10 +56,13 @@
 
 
 \section{Ristrutturazione dello schema E-R}
-\subsection{Analisi delle Ridondanze}
-\subsection{Eliminazione delle Generalizzazioni}
-\subsection{Partizionamento/Accorpamento di entità e associazioni}
-\subsection{Eeventuale scelta degli identificatori principali}
+\input{Ristrutturazione_er.tex}
+
+% \subsection{Analisi delle Ridondanze}
+% \subsection{Eliminazione delle Generalizzazioni}
+% \subsection{Partizionamento/Accorpamento di entità e associazioni}
+% \subsection{Eeventuale scelta degli identificatori principali}
+
 \section{Schema E-R ristrutturato + Business Rules}
 \input{Business_rules.tex}
 
