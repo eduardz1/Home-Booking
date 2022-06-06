@@ -86,6 +86,13 @@ Analizziamo l'operazione "\textbf{Scrittura di una recensione su un alloggio (30
 \end{longtable}
 \normalsize
 
+
+% 
+% 
+%      TUTTE LE IMMAGINI DI QUESTA PAGINA VANNO MESSE A COPPIE, 2 IMMAGINI PER PAGINA UNA ACCANTO ALL'ALTRA
+% 
+%
+
 Analisi di complessità in presenza di ridondanza:
 \begin{itemize}
     \item In termini di tempo, vegnono effettuati un accesso in lettura e tre accessi in scrittura, quindi 3000 + 3000 * 3 * 2 (contiamo doppi gli accessi in scrittura), per un totale di 21 mila accessi.
@@ -124,14 +131,12 @@ La generalizzazione è di tipo totale ed esclusiva. La decisione consiste nel ra
 \includegraphics[width=\textwidth]{resources/page14}
 La decisione di accorpare le entità PRENOTAZIONE e SOGGIORNO in un'unica entità con attributo soggiorno (di tipo booleano) deriva dal fatto che l'entità SOGGIORNO viene generata dalle prenotazioni con stato "confermata".
 
-{todo:immagine utente to Telefono}
-Decidiamo di partizionare l'entità UTENTE estraendo l'attributo telefono e facendolo diventare una nuova entità TELEFONO, associata a UTENTE tramite la relazione POSSEDIMENTO.
-{todo:immagine utente to Pagamento}
-Decidiamo di partizionare l'entità UTENTE estraendo l'attributo Pagamento e facendolo diventare una nuova entità METODO DI PAGAMENTO, associata a UTENTE tramite la relazione APPARTENENZA.
-
+\includegraphics[width=\textwidth]{resources/page15}
+\includegraphics[width=\textwidth]{resources/page16}
+Decidiamo di partizionare l'entità \textbf{UTENTE} estraendo gli attributi \textbf{Telefono} e \textbf{Pagamento}, facendoli diventare rispettivamente una nuova entità \textbf{ALLOGGIO}TELEFONO, associata a \textbf{UTENTE} tramite la relazione \textbf{POSSEDIMENTO}, e una nuova entità \textbf{ALLOGGIO}, associata a \textbf{UTENTE} tramite la relazione \textbf{APPARTENENZA}.
 
 \subsection{Eliminazione degli attributi composti}
-L’attributo composto “\textbf{indirizzo}” viene eliminato seguendo la soluzione seguente: eliminare l’attributo composto e considerare i suoi componenti come attributi semplici. Nel caso di indirizzo abbiamo: via, numero civico e cap e comune.
+L’attributo composto “\textbf{indirizzo}” viene eliminato, considerando i suoi componenti come attributi semplici. Nel caso di indirizzo abbiamo: via, numero civico, cap e comune.
 Tale eliminazione viene effettuato nell'entità \textbf{ALLOGGIO}
 
 
@@ -140,7 +145,7 @@ Tale eliminazione viene effettuato nell'entità \textbf{ALLOGGIO}
   \item Utente (\underline{Email}, Nome, Cognome, Password, Host, Superhost)
   \item Alloggio (\underline{ID Alloggio}, Nome, Host, tipologia, Orario check-in, Orario check-out, Costo, Costo pulizia, Posti letto, CAP, Comune, Civico, Via)
         Alloggio (Host) referenzia Utente (Email)
-  \item Prenotazione (\underline{ID Prenotazione}, Richiedente, ID Alloggio, Data inizio, Data fine, Soggiorno, Stato)
+  \item Prenotazione (\underline{ID Prenotazione}, Richiedente, ID Alloggio, Data inizio, Data fine, Soggiorno, Stato, Numero ospiti)
         Prenotazione (ID Alloggio) referenzia Alloggio (ID Alloggio)
         Prenotazione (Richiedente) referenzia Utente (Email)
   \item Recensione (\underline{ID Recensione}, Autore, ID Prenotazione, Data, Valutazione posizione, Valutazione pulizia, Valutazione qualità-prezzo, Valutazione comunicazione, Corpo)
