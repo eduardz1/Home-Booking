@@ -9,9 +9,6 @@
   \item Un utente può valutare un host, e viceversa, solamente al termine del soggiorno soggetto alla valutazione
   \item Un utente non può cancellare una prenotazione dopo l'inizio di un soggiorno
   \item Un host non può cancellare una prenotazione dopo l'inizio di un soggiorno
-  \item Una valutazione può avere un punteggio compreso tra 1 e 5
-  \item Una recensione da parte di un host verso un utente comprende solo un commento testuale
-  \item Una recensione da parte di un utente verso un host può contenere sia un commento testuale che una valutazione
   \item Una recensione da parte di un host risulta visibile solamente quando il soggiorno a cui fa riferimento riceve la recensione da parte dell'utente, e viceversa
   \item Una recensione risulta visibile trascorsi 7 giorni dal termine del soggiorno a cui fa riferimento
   \item Le recensioni sono visibili sui profili degli utenti suddivise in base a quelle ricevute come ospite e come host
@@ -19,7 +16,7 @@
 
 \subsubsection{Introdotte}
 \begin{itemize}
-  \item Un utente non può registrarsi utilizzando una mail già utilizzata per la registrazione di un altro utente
+  
   \item L'indirizzo e-mail di un utente che effettua la registrazione deve corrispondere al formato e-mail (nomemail@dominio.TLD)
   \item Un utente viene ritenuto host se possiede almeno un alloggio
   \item Un utente può cancellare solamente le proprie prenotazioni effettuate
@@ -32,8 +29,10 @@
   \item Un utente non può scrivere commenti sotto recensioni altrui
   \item Un host non può scrivere commenti sotto recensioni altrui
   \item Un utente non può effettuare due recensioni per lo stesso soggiorno
-  \item Una prenotazione non può avere una data di fine antecedente o uguale alla data di inizio
-  \item Una prenotazione non può avere una data di inizio antecedente al momento in cui viene effettuata
   \item Una prenotazione non può essere effettuata presso un alloggio di tipo stanza singola o appartamento se la data di inizio o di fine intercorre tra la data di inizio e di fine di un'altra prenotazione presso lo stesso alloggio
-  \item Non può essere effettuata una prenotazione, presso un alloggio, con un numero di ospiti maggiore rispetto ai posti disponibili
+  \item Una prenotazione non può essere cancellata completamente dal sistema: quando una prenotazione viene cancellata, viene aggiornato il suo stato a "cancellata"
+  \item Una prenotazione non può essere cancellata se la data di inizio è antecedente alla data odata di oggi
+  \item Quando un alloggio viene rimosso, lo stato delle sue prenotazioni con soggiorno false viene aggiornato a "cancellata"
+  \item Quando un host viene cancellato, lo stato delle prenotazioni in corso associate ai suoi alloggi viene aggiornato a "cancellata"
+  \item Quando un utente viene cancellato, le recensioni effettuate risulteranno scritte da "utenti cancellato"
 \end{itemize}
