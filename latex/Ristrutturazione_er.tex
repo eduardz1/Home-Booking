@@ -133,7 +133,11 @@ La decisione di accorpare le entità PRENOTAZIONE e SOGGIORNO in un'unica entit�
 
 \includegraphics[width=\textwidth]{resources/page15}
 \includegraphics[width=\textwidth]{resources/page16}
-Decidiamo di partizionare l'entità \textbf{UTENTE} estraendo gli attributi \textbf{Telefono} e \textbf{Pagamento}, facendoli diventare rispettivamente una nuova entità \textbf{ALLOGGIO}TELEFONO, associata a \textbf{UTENTE} tramite la relazione \textbf{POSSEDIMENTO}, e una nuova entità \textbf{ALLOGGIO}, associata a \textbf{UTENTE} tramite la relazione \textbf{APPARTENENZA}.
+Decidiamo di partizionare l'entità \textbf{UTENTE} estraendo gli attributi \textbf{Telefono} e \textbf{Pagamento}, facendoli diventare rispettivamente una nuova entità \textbf{TELEFONO}, associata a \textbf{UTENTE} tramite la relazione \textbf{POSSEDIMENTO}, e una nuova entità \textbf{PAGAMENTO}, associata a \textbf{UTENTE} tramite la relazione \textbf{APPARTENENZA}.
+
+\includegraphics[width=\textwidth]{resources/page17}
+\includegraphics[width=\textwidth]{resources/page18}
+Decidiamo di partizionare l'entità \textbf{UTENTE} estraendo l'attributo \textbf{Foto}, facendolo diventare una nuova entità \textbf{FOTO}, associata a \textbf{UTENTE} tramite la relazione \textbf{RAPPRESENTAZIONE}.
 
 \subsection{Eliminazione degli attributi composti}
 L’attributo composto “\textbf{indirizzo}” viene eliminato, considerando i suoi componenti come attributi semplici. Nel caso di indirizzo abbiamo: via, numero civico, cap e comune.
@@ -142,18 +146,20 @@ Tale eliminazione viene effettuato nell'entità \textbf{ALLOGGIO}
 
 \subsection{SCHEMA RELAZIONALE}
 \begin{itemize}
-  \item Utente (\underline{Email}, Nome, Cognome, Password, Host, Superhost)
+  \item Utente (\underline{Email}, Nome, Cognome, Password, Host, Superhost, Verificato, Carta di identità)
   \item Telefono (\underline{Utente}, \underline{Numero}, Prefisso)
   \item Pagamento (\underline{Utente}, \underline{Numero}, Circuito)
   \item Utente (\underline{Email}, Nome, Cognome, Password, Host, Superhost)
   \item Alloggio (\underline{ID Alloggio}, Nome, Host, Descrizione, Tipologia, Orario check-in, Orario check-out, Costo, Costo pulizia, Posti letto, CAP, Comune, Civico, Via)
         Alloggio (Host) referenzia Utente (Email)
+  \item Foto (\underline{Path}, \underline{Alloggio})
+        Alloggio (Foto) referenzia Alloggio (ID Alloggio)
   \item Prenotazione (\underline{ID Prenotazione}, Richiedente, ID Alloggio, Data inizio, Data fine, Soggiorno, Stato, Numero ospiti)
         Prenotazione (ID Alloggio) referenzia Alloggio (ID Alloggio)
         Prenotazione (Richiedente) referenzia Utente (Email)
   \item Recensione (\underline{ID Recensione}, Autore, ID Prenotazione, Data, Categoria, Valutazione posizione, Valutazione pulizia, Valutazione qualità-prezzo, Valutazione comunicazione, Corpo)
-        Prenotazione (Autore) referenzia Utente (Email)
-        Prenotazione (ID Prenotazione) referenzia Prenotazione (ID Prenotazione)
+        Recensione (Autore) referenzia Utente (Email)
+        Recensione (ID Prenotazione) referenzia Prenotazione (ID Prenotazione)
   \item Commento (\underline{ ID Commento }, Data, ID Recensione, Autore, Corpo)
         Commento (Autore) referenzia Utente (Email)
         Commento (ID Recensione) referenzia Recensione (ID Recensione)
