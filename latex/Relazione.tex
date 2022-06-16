@@ -13,12 +13,34 @@
 % \usepackage{showframe}
 \usepackage{caption}
 \usepackage{color}
+\usepackage{listingsutf8}
 
 % \usepackage{pstricks}
 % \usepackage{auto-pst-pdf}
 % \usepackage{pstricks-add}
 % \usepackage{pst-eps}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\definecolor{mygreen}{RGB}{154,255,77}
+\definecolor{mygray}{gray}{0.5}
+\definecolor{myblue}{RGB}{41,141,255}
+
+\lstset{
+    language=SQL,
+    basicstyle=\small,
+    keywordstyle=\color{myblue},
+    commentstyle=\color{mygray},
+    numberstyle=\color{mygreen},
+    numbers=left,
+    numberstyle=\tiny\color{mygray},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=2,
+    literate={{–}{\textendash}2
+              {—}{\textemdash}2},
+    inputencoding = utf8/latin1,  % Input encoding
+    extendedchars = true,  % Extended ASCII
+}
 
 \title{
     \leavevmode{\includegraphics[width=0.8\textwidth]{resources/Universita-degli-studi-di-torino-logo.png}\newline\newline}\\
@@ -44,7 +66,7 @@
 
 \newpage
 \section{Schema E-R + Business Rules}
-\includegraphics[width=\textwidth]{resources/ER.pdf}
+\includegraphics[width=\textwidth]{resources/pdf/ER.pdf}
 
 \chapter{Progettazione Logica}
 \section{Tavola dei Volumi}
@@ -61,17 +83,32 @@
 % \subsection{Analisi delle Ridondanze}
 % \subsection{Eliminazione delle Generalizzazioni}
 % \subsection{Partizionamento/Accorpamento di entità e associazioni}
-% \subsection{Eeventuale scelta degli identificatori principali}
+% \subsection{Eventuale scelta degli identificatori principali}
 
 \section{Schema E-R ristrutturato + Business Rules}
-\includegraphics[width=\textwidth]{resources/ER-Ristrutturato.pdf}
+\includegraphics[width=\textwidth]{resources/pdf/ER-Ristrutturato.pdf}
+\clearpage
 \input{Business_rules.tex}
 
+\clearpage
 \section{Schema Relazionale}
+\input{Schema_relazionale.tex}
 
 \chapter{Implementazione}
+
+Riportiamo in seguito alcune query significative per il nostro database
+
 \section{DDL di Creazione dei Database}
+\lstinputlisting{../sql/DDL/db_init.sql}
+
 \section{DML di Popolamento di Tutte le Tabelle del Database}
+% \subsection{Non so che cosa sta descrivendo crud_data}
+\lstinputlisting{../sql/DML/crud_data.sql}
+
+% \subsection{Non so che cosa sta descrivendo dummy_data}
+\lstinputlisting{../sql/DML/dummy_data.sql}
+
 \section{Qualche Operazione di cancellazione e modifica}
+\lstinputlisting{../sql/DML/operation.sql}
 
 \end{document}
