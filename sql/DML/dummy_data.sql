@@ -68,29 +68,6 @@ INSERT INTO Contenuto (IDLista, IDAlloggio) VALUES ('14e9d1b4-7144-4e9f-9ec2-571
 -- @block Dump dei dati per la tabella Foto --
 INSERT INTO Foto (IDAlloggio, Path) VALUES ('97c645ea-e19c-411c-8539-5d21def970cc', 'http://www.unito.it/wp-content/uploads/2017/01/unito-logo.png');
 
-
-
-
--- useful, da rimuovere
--- INSERT INTO alloggio (Nome, Host, Descrizione, Tipologia, OrarioCheckIn, OrarioCheckOut, Costo, CostoPulizia, CAP, Comune, Civico, Via) 
--- VALUES ('A', 
---         'eduard.occhipinti@edu.unito.to', 
---         'Stanza molto tranquilla e confortevole, ottima per studenti del dipartimento di informatica',
---         'Stanza condivisa', '09:00:00', '22:00:00',
---         10,5,
---         10129,'Torino', 15, 'Via non ricordo indirizzo');
-
--- INSERT INTO alloggio (Nome, Host, Descrizione, Tipologia, OrarioCheckIn, OrarioCheckOut, Costo, CostoPulizia, CAP, Comune, Civico, Via) 
--- VALUES ('B', 
---         'eduard.occhipinti@edu.unito.to', 
---         'Stanza molto tranquilla e confortevole, ottima per studenti del dipartimento di informatica',
---         'Stanza condivisa', '09:00:00', '22:00:00',
---         10,5,
---         10129,'Torino', 15, 'Via non ricordo indirizzo');
-
--- Delete from utente where TRUE
--- Delete from alloggio where TRUE
--- Delete from prenotazione where TRUE
-
--- UPDATE utente SET Host = TRUE WHERE Email = 'eduard.occhipinti@edu.unito.to';
-
+-- @block Dump dei dati per la tabella Foto --
+INSERT INTO Servizio (IDAlloggio, TipoServizio) VALUES ('97c645ea-e19c-411c-8539-5d21def970cc', 'Wifi');
+INSERT INTO Servizio (IDAlloggio, TipoServizio) VALUES ('97c645ea-e19c-411c-8539-5d21def970cc', 'Animali ammessi');

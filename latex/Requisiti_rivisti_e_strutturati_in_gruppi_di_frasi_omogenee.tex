@@ -3,7 +3,7 @@ Si vuole realizzare una base di dati per un servizio che permette di affittare e
 alloggi di vario tipo ad esempio interi appartamenti, stanze private.
 \newline
 \newline
-Per il dato utente registriamo: indirizzo email, password, nome, cognome, numeri di telefono, carta di identità, metodo di pagamento.
+Per il dato utente registriamo: indirizzo email, password, nome, cognome, numeri di telefono, carta di identità, metodo di pagamento e data registrazione.
 \newline
 \newline
 Per il dato host registriamo: superhost.
@@ -13,7 +13,7 @@ Per il dato soggiorno registriamo: data inizio, data fine, idalloggio, idprenota
 Ogni utente può avere 0 o più soggiorni.
 \newline
 \newline
-Per il dato alloggio registriamo: nome, indirizzo, comune, descrizione, costo per notte per  persona, costo pulizia, numero di letti, orario check-in, orario check-out, rating medio(?)
+Per il dato alloggio registriamo: nome, indirizzo, comune, descrizione, costo per notte per persona, costo pulizia, numero di letti, orario check-in e orario check-out.
 Ogni host può possedere uno o più alloggi. Ad ogni alloggio sono associate 0 o più foto. Ogni alloggio offre 0 o più servizi. Per ogni alloggio sono scritte 0 o più recensioni.
 \newline
 \newline
@@ -29,12 +29,11 @@ Ogni utente può aggiungere 0 o più alloggi tra i preferiti e creare 0 più lis
 Per il dato lista registriamo: descrizione, nome
 \newline
 \newline
-Per il dato prenotazione registriamo: costo prenotazione, idalloggio, stato, numero ospiti, id metodo di pagamento. Ogni prenotazione sarà associata ad un utente ed un host, potrà avere 0 o più ospiti associati. La prenotazione può essere cancellata sia dall'ospite che dall'host: verrà aggiornato lo stato.
+Per il dato prenotazione registriamo: costo prenotazione, alloggio, stato, numero ospiti, data prenotazione, data inizio e data fine. Ogni prenotazione sarà associata ad un utente ed un host, potrà avere 0 o più ospiti associati. La prenotazione può essere cancellata sia dall'ospite che dall'host: verrà aggiornato lo stato.
 \newline
 \newline
 Al termine del soggiorno, gli ospiti e gli host si possono valutare a vicenda. 
-Per il dato recensione registriamo: visibilità, data, idautore, idutente, 
-idalloggio, testo, valutazione pulizia, valutazione comunicazione, valutazione 
+Per il dato recensione registriamo: visibilità, data, autore, corpo, valutazione pulizia, valutazione comunicazione, valutazione 
 posizione, valutazione qualità-prezzo.
 \newline
 \newline
@@ -43,7 +42,7 @@ entrambi hanno fatto la recensione oppure se uno dei due non ha fatto la recensi
 diventa visibile dopo 7 giorni dalla fine del soggiorno
 \newline
 \newline
-Per il dato commento registriamo: idautore, testo, idrecensione
+Per il dato commento registriamo: autore, testo, recensione.
 Gli host e gli ospiti possono commentare più volte le review in cui sono coinvolti, 
 creando un thread di discussione.
 \newline
@@ -69,7 +68,7 @@ Il sistema deve supportare le seguenti operazioni:
     \item Ogni utente può creare delle liste, in cui aggiungere gli alloggi preferiti
     \item Ogni utente può effettuare una o più prenotazioni, purchè abbia un metodo di pagamento. Può confermare o cancellare le proprie prenotazioni
     \item Ogni utente che ha effettuato una prenotazione, può aggiungere altri utenti ad essa, se registrati al servizio
-    \item Ogni utente può scrivere commenti nei thread delle recensioni in cui è incluso \\
+    \item Ogni utente può scrivere commenti nei thread delle recensioni in cui è incluso
 \end{itemize}
 \bigskip
 \textbf{Frasi relative a host}:
