@@ -23,11 +23,13 @@
 
 \definecolor{mygreen}{RGB}{154,255,77}
 \definecolor{mygray}{gray}{0.5}
+\definecolor{mylightgray}{gray}{0.95}
 \definecolor{myblue}{RGB}{41,141,255}
 \definecolor{myteal}{RGB}{0,150,136}
 
 \lstset{
     language=SQL,
+    backgroundcolor=\color{mylightgray},
     basicstyle=\scriptsize\ttfamily,
     keywordstyle=\color{myblue},
     commentstyle=\color{mygray},
@@ -37,6 +39,7 @@
     numberstyle=\tiny\color{mygray},
     breaklines=true,
     breakatwhitespace=true,
+    showstringspaces=false,
     tabsize=2,
     literate={{–}{\textendash}2
               {—}{\textemdash}2},
@@ -102,26 +105,31 @@ Riportiamo in seguito alcune query significative per il nostro database
 
 \section{DDL di Creazione dei Database}
 \lstinputlisting{../sql/DDL/db_init.sql}
+\clearpage
 \lstinputlisting{../sql/DDL/1.sql}
 \lstinputlisting{../sql/DDL/2.sql}
 \lstinputlisting{../sql/DDL/3.sql}
+\clearpage
 \lstinputlisting{../sql/DDL/4.sql}
 \lstinputlisting{../sql/DDL/5.sql}
+\clearpage
 \lstinputlisting{../sql/DDL/6.sql}
+\clearpage
 \lstinputlisting{../sql/DDL/7.sql}
 \lstinputlisting{../sql/DDL/8.sql}
 \lstinputlisting{../sql/DDL/9.sql}
 \lstinputlisting{../sql/DDL/10.sql}
-\lstinputlisting{../sql/DDL/11sql}
+\lstinputlisting{../sql/DDL/11.sql}
 
+\clearpage
 \section{DML di Popolamento di Tutte le Tabelle del Database}
-% \subsection{Non so che cosa sta descrivendo crud_data}
 \lstinputlisting{../sql/DML/dummy_data.sql}
 
-% \subsection{Non so che cosa sta descrivendo dummy_data}
+\clearpage
+\section{Qualche Operazione di cancellazione e modifica}
 \lstinputlisting{../sql/DML/crud_data.sql}
 
-\section{Qualche Operazione di cancellazione e modifica}
+\subsection{Qualche operazione di sistema}
 \lstinputlisting{../sql/DML/operation.sql}
 
 \end{document}

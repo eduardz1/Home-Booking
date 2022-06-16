@@ -1,21 +1,21 @@
 -- @block initialize the database
 -- CREATE DATABASE home_booking;
 DROP TABLE IF EXISTS Utente,
-                     Telefono,
-                     Pagamento,
-                     Prenotazione,
-                     Alloggio,
-                     Recensione,
-                     Commento,
-                     Lista,
-                     Contenuto,
-                     Servizio,
-                     Foto;
+    Telefono,
+    Pagamento,
+    Prenotazione,
+    Alloggio,
+    Recensione,
+    Commento,
+    Lista,
+    Contenuto,
+    Servizio,
+    Foto;
 DROP TYPE IF EXISTS StatoPrenotazione,
-                    CategoriaRecensione,
-                    TipologiaAlloggio;
-
-
+    CategoriaRecensione,
+    TipologiaAlloggio;
+    
+     
 -- @block initialize the enums
 CREATE TYPE StatoPrenotazione AS ENUM (
     'Prenotato',
