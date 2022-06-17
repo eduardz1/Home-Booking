@@ -2,7 +2,7 @@
 -- @block initialize Prenotazione 
 -- IDAlloggio: Può essere NULL per supportare le casistiche in cui un alloggio è stato cancellato dal sistema
 -- Il check su DataInizio > CURRENT_TIMESTAMP potrebbe non permettere inserimenti massivi futuri da parte di un DBA,
---  in caso di manutenzione: meglio evitare questo tipo di controllo
+-- in caso di manutenzione: meglio evitare questo tipo di controllo
 CREATE TABLE Prenotazione (
     IDPrenotazione UUID NOT NULL DEFAULT gen_random_uuid(),
     IDAlloggio UUID,

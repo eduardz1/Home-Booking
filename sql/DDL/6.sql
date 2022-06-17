@@ -1,4 +1,3 @@
-
 -- @block initialize Recensione 
 -- IDPrenotazione: Una prenotazione non può essere cancellata dal sistema, a meno di attività manuali sul db
 CREATE TABLE Recensione (

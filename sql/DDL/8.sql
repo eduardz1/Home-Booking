@@ -1,4 +1,3 @@
-
 -- @block initialize Lista
 CREATE TABLE Lista (
     IDLista UUID NOT NULL DEFAULT gen_random_uuid(),

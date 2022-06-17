@@ -1,4 +1,3 @@
-
 -- @block initialize Servizio
 CREATE TABLE Servizio (
     TipoServizio TEXT,

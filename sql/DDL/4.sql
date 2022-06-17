@@ -1,4 +1,3 @@
-
 -- @block initialize Alloggio 
 -- Nome: Si potrebbe creare un indice su Nome per velocizzare le operazioni di ricerca sull'alloggio
 -- Host: Può essere NULL per supportare le casistiche in cui un host è stato cancellato dal sistema

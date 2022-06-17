@@ -1,4 +1,3 @@
-
 -- @block initialize Commento 
 CREATE TABLE Commento (
     IDCommento UUID NOT NULL DEFAULT gen_random_uuid(),
