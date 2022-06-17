@@ -1,7 +1,7 @@
 
 -- @block initialize Prenotazione 
 -- IDAlloggio: Può essere NULL per supportare le casistiche in cui un alloggio è stato cancellato dal sistema
-- - Il check su DataInizio > CURRENT_TIMESTAMP potrebbe non permettere inserimenti massivi futuri da parte di un DBA,
+-- Il check su DataInizio > CURRENT_TIMESTAMP potrebbe non permettere inserimenti massivi futuri da parte di un DBA,
 --  in caso di manutenzione: meglio evitare questo tipo di controllo
 CREATE TABLE Prenotazione (
     IDPrenotazione UUID NOT NULL DEFAULT gen_random_uuid(),
@@ -17,5 +17,6 @@ CREATE TABLE Prenotazione (
     SET NULL,
         FOREIGN KEY (Richiedente) REFERENCES Utente(Email) ON DELETE CASCADE ON UPDATE CASCADE,
         PRIMARY KEY (IDPrenotazione),
-        Constraint prenotazione_start_before_end CHECK (DataInizio < DataFine) - - CHECK (DataInizio > CURRENT_TIMESTAMP)
+        Constraint prenotazione_start_before_end CHECK (DataInizio < DataFine) 
+    -- CHECK (DataInizio > CURRENT_TIMESTAMP)
 );
