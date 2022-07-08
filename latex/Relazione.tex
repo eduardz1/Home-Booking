@@ -14,12 +14,26 @@
 \usepackage{caption}
 \usepackage{color}
 \usepackage{listingsutf8}
+\usepackage{enumitem} % noitemsep in lists
+
+\usepackage{contour} % used to make better underlining
+\usepackage{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 % \usepackage{pstricks}
 % \usepackage{auto-pst-pdf}
 % \usepackage{pstricks-add}
 % \usepackage{pst-eps}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\renewcommand{\ULdepth}{1.8pt} % underline depth
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{% better underline
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
 
 \definecolor{mygreen}{RGB}{154,255,77}
 \definecolor{mygray}{gray}{0.5}
